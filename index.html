@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nike Sneakers Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">NIKE<span class="swoosh">®</span></div>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="dunk.html">Dunk SB</a>
+        <a href="jordan.html">Jordan 1</a>
+        <a href="travis.html">Travis Scott</a>
+        <a href="airforce.html">Air Force 1</a>
+        <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <canvas id="starfield"></canvas>
+      <div class="hero-inner">
+        <h1 class="hero-title">Just Do It <span class="checkmark">✓</span> with ÆɱIʀɱæĦði shop</h1>
+        <p class="hero-titlee">مرکز خرید کفش مستر و اورجینال بسکتبالی و خیابانی</p>
+        <div class="categories">
+          <a class="cat-card" href="dunk.html">
+            <img src="images/dunk/1.jpg" alt="Basketball Collection">
+            <h3>Basketball</h3>
+            <p>Comfortable & squeiky </p>
+          </a>
+          <a class="cat-card" href="jordan.html">
+            <img src="images/jordan/1.jpg" alt="Jordan  Collection">
+            <h3>Jordan </h3>
+            <p>Basketball&walking</p>
+          </a>
+          <a class="cat-card" href="travis.html">
+            <img src="images/travis/1.jpg" alt="Travis Scott Collection">
+            <h3>Travis Scott</h3>
+            <p>Limited editions&best styles</p>
+          </a>
+          <a class="cat-card" href="airforce.html">
+            <img src="images/airforce/1.jpg" alt="Air Force 1 Collection">
+            <h3>Air Force 1</h3>
+            <p>All‑time favorite</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year-index"></span> Nike Store Made By ÆɱIʀɱæĦði</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+    const stars = Array.from({length:200}).map(() => ({
+      x: Math.random()*w,
+      y: Math.random()*h,
+      r: Math.random()*1.2+0.2,
+      d: Math.random()
+    }));
+    function draw() {
+      ctx.fillStyle = '#080808';
+      ctx.fillRect(0,0,w,h);
+      ctx.fillStyle = 'white';
+      ctx.shadowColor = 'white';
+      ctx.shadowBlur = 2;
+      stars.forEach(s => {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fill();
+        s.x += Math.cos(s.d)*0.3;
+        s.y += Math.sin(s.d)*0.3;
+        if (s.x> w) s.x = 0; if (s.x<0) s.x = w;
+        if (s.y> h) s.y = 0; if (s.y<0) s.y = h;
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+  </script>
+<audio id="myAudio" autoplay loop muted>
+    <source src="THANK GOD - Travis Scott (320).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const audio = document.getElementById("myAudio");
+    audio.muted = false
+</script>
+
+
+</body>
+</html>

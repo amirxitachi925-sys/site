@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Cart — Nike Mini Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">NIKE<span class="swoosh">®</span></div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="dunk.html">Dunk SB</a>
+        <a href="jordan.html">Jordan 1</a>
+        <a href="travis.html">Travis Collab</a>
+        <a href="airforce.html">Air Force 1</a>
+        <a href="cart.html" class="active cart-link">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container cart-page">
+    <h2>Your Shopping Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-summary">
+      <p>Total: $<span id="cart-total">0</span></p>
+      <div class="cart-actions">
+        <button id="clear-cart" class="btn">Clear Cart</button>
+        <button id="checkout" class="btn primary">Checkout</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year-cart"></span> Nike Store Made By ÆɱIʀɱæĦði</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+<audio id="myAudio" autoplay loop muted>
+    <source src="THANK GOD - Travis Scott (320).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const audio = document.getElementById("myAudio");
+    audio.muted = false
+</script>
+
+</body>
+</html>
